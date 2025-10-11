@@ -1,0 +1,44 @@
+#Equation of motions
+def upwardmotion_1(u,t):
+    global g
+    g = 9.8
+    u = float(input("Enter initial velocity of the object in m/s: "))
+    t = float(input("Enter time in seconds: "))
+    v = u + g*t
+    print("The final velocity of the object is",v,"m/s")
+    return v
+
+def upwardmotion_2(u,t):
+    u = float(input("Enter initial velocity of the object in m/s: "))
+    t = float(input("Enter time in seconds: "))
+    h = u*t - 0.5*g*t**2
+    print("The height of the object is",h,"m")
+    return h
+def upwardmotion_3(u,v,h):
+    u = float(input("Enter initial velocity of the object in m/s: "))
+    v = float(input("Enter final velocity of the object in m/s: "))
+    h = float(input("Enter height in meters: "))
+    v**2 = u**2 - 2*g*h
+    print("The final velocity of the object is",v,"m/s")
+    return v
+def downwardmotion_1(u,t):
+    u = float(input("Enter initial velocity of the object in m/s:"))
+    t = float(input("Enter time taken in seconds:"))
+    v = u + g*t
+    print("Velocity of body in downward motion =",v, "m/s")
+    return v
+def downwardmotion_2(u,t):
+    u = float(input("Enter initial velocity of the object in m/s:")
+    t = float(input("Enter time taken in seconds:"))
+    h = u*t + 0.5*g*t**2
+    print("Height of body in downward motion =",h,"m")
+    return h
+def downwardmotion_3(u,v,h):
+    u = float(input("Enter initial velocity of the object in m/s:"))
+    h = float(input("Enter height in meters:"))
+    va = (u**2 + 2*g*h)**0.5 #In case v square isn't required
+    vb**2 = u**2 + 2*g*h #In case v square isn't required
+    print("Velocity of body in downward motion =",v,"m/s")
+    return va, vb
+
+
