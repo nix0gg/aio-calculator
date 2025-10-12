@@ -48,3 +48,19 @@ def average_velocity(u, v):
 
 def average_acceleration(u, v, t):
     return (v - u) / t
+
+def impulse_2(m, v, u):
+    return m * (v - u)
+
+def n1(m):
+    return m * g
+
+def n2(m, a):
+    return m * (g + a)
+
+def n3(m, a):
+    return m * (g - a)
+
+def m(n):
+    return n / g
+
