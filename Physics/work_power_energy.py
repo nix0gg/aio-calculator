@@ -1,6 +1,6 @@
 import math
 g = 9.8
-
+G = 6.674e-11
 def work(f,d,theta):
     return f*d*math.cos(theta)
 global theta
@@ -22,3 +22,23 @@ def power_2(f,v):
 def work_energy_theorem(k2,k1,e):
     delta_k = k2-k1
     return (k2-k1)*e
+
+def work_2(f,d):
+    return f*d
+def efficiency(wo,wi):
+    return (wo/wi)*100
+
+def gravitational_potential_energy(m,r1,r2,m2):
+    return -G*(m*m2)*((1/r2)-(1/r1))
+
+def spring_potential_energy(k,x):
+    return 0.5*k*(x**2)
+
+def elastic_potential_energy(k,x):
+    return 0.5*k*(x**2)
+
+def potential_energy_spring(k,x):
+    return 0.5*k*(x**2)
+
+def kinetic_energy_spring(k,x,xmax):
+    return 0.5*k*(xmax**2-x**2)
