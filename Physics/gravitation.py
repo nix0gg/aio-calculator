@@ -20,3 +20,6 @@ def time_period(m, r):
 def weight(m):
     return m * g
 
+def gravitational_potential_energy(m1, m2, r):
+    return -G * (m1 * m2) / r
+

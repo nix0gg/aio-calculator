@@ -21,6 +21,10 @@ def angular_momentum(i, omega):
 def rotational_kinetic_energy(i, omega):
     return 0.5 * i * omega**2
 
+def parallel_axis_theorem(I_cm, m, d):
+    return I_cm + m * d**2
+
+
 #Value of moment of inertia based on shape
 
 def i_ring(m,r,axis):

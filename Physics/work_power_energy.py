@@ -21,7 +21,7 @@ def power_2(f,v):
 
 def work_energy_theorem(k2,k1,e):
     delta_k = k2-k1
-    return (k2-k1)*e
+    return (k2-k1)
 
 def work_2(f,d):
     return f*d

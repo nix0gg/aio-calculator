@@ -17,3 +17,8 @@ def tension(m1, m2, theta):
 def impulse(F, t):
     return F * t
 
+def momentum(m, v):
+    return m * v
+
+def newtons_second_law(F, m):
+    return F / m 
