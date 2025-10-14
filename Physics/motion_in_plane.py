@@ -1,5 +1,5 @@
 import math
-g = 9.8
+from physics_constants import g
 def horizontal_displacement(u,theta,t):
     return u*math.cos(math.radians(theta))*t
 

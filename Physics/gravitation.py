@@ -1,6 +1,5 @@
+from physics_constants import G, g
 import math
-G = 6.674e-11
-g = 9.8
 
 def universal_gravitational_force(m1, m2, r):
     return G * (m1 * m2) / r**2

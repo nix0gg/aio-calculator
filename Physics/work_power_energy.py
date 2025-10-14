@@ -1,6 +1,6 @@
+from physics_constants import G, g
 import math
-g = 9.8
-G = 6.674e-11
+
 def work(f,d,theta):
     return f*d*math.cos(theta)
 global theta

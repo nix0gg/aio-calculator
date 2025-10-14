@@ -1,6 +1,5 @@
 import math
-
-g = 9.8
+from physics_constants import g
 
 def velocity(u, t, isDirectionUp=True):
     return u - g * t if isDirectionUp else u + g * t
