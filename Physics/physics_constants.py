@@ -1,6 +1,6 @@
 import math
 
-#Speed of light in vacum
+#Speed of light in vacuuum
 c = 299792458  # m/s
 
 #Planck constant
@@ -159,3 +159,32 @@ Delta_nu_Cs = 9.192631770e9  # Hz
 #Acceleration due to gravity
 g = 9.80665  # m/s^2
 
+# Permittivity of free space
+epsilon_0 = 8.854187817e-12  # F/m
+
+#Permeability of free space
+mu_0 = 4 * math.pi * 1e-7  # N/A^2
+
+#Mechanical equivalent of heat
+J = 4.186  # J/cal
+
+#Standard atmospheric pressure
+p_atm= 1.01325e5  # Pa
+
+#Absolute zero in Celsius
+T_0_C = -273.15  # °C
+
+#Electron volt
+eV = 1.602176634e-19  # J
+
+#Unified atomic mass unit
+u = 1.66053906660e-27  # kg
+
+#Electron rest energy
+E_e_rest = 8.1871057769e-14  # J
+
+#Energy equivalent of 1 atomic mass unit
+uc2 = 931.5 #MeV
+
+#volume of ideal gas 
+V_m_ideal = 22.710947  # m^3·mol^−1 at STP
