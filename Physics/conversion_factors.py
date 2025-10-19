@@ -281,6 +281,7 @@ def wattconvert(convertTo):
         return 0.7376  # foot-pounds force per second
     return None
 
+__all__ = [name for name in globals() if not name.startswith("_")]
 
 
 

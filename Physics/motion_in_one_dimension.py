@@ -63,3 +63,4 @@ def n3(m, a):
 def m(n):
     return n / g
 
+__all__ = [name for name in globals() if not name.startswith("_")]

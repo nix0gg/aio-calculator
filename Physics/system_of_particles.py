@@ -56,3 +56,5 @@ def i_cylinder(m,r,kind):
     
 def i_sphere(m,r):
     return 2*(m*(r**2))/5
+
+__all__ = [name for name in globals() if not name.startswith("_")]

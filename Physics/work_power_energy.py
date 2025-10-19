@@ -42,3 +42,5 @@ def potential_energy_spring(k,x):
 
 def kinetic_energy_spring(k,x,xmax):
     return 0.5*k*(xmax**2-x**2)
+
+__all__ = [name for name in globals() if not name.startswith("_")]

@@ -30,3 +30,5 @@ def angle_of_velocity(u,theta,t):
     vx = horizontal_velocity(u,theta)
     vy = vertical_velocity(u,theta) - g*t
     return math.degrees(math.atan2(vy,vx))
+
+__all__ = [name for name in globals() if not name.startswith("_")]

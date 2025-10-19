@@ -22,3 +22,4 @@ def weight(m):
 def gravitational_potential_energy(m1, m2, r):
     return -G * (m1 * m2) / r
 
+__all__ = [name for name in globals() if not name.startswith("_")]

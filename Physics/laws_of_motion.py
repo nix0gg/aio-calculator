@@ -22,3 +22,5 @@ def momentum(m, v):
 
 def newtons_second_law(F, m):
     return F / m 
+
+__all__ = [name for name in globals() if not name.startswith("_")]
