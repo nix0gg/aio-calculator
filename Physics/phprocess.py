@@ -328,3 +328,5 @@ def proc_gravitational_pe():
     m2 = float(input("Enter mass of second body (M): "))
     r = float(input("Enter distance between centers (L): "))
     print("Gravitational Potential Energy (ML^2T^-2):", gravitational_potential_energy(m1, m2, r))
+
+__all__ = [name for name in globals() if not name.startswith("_")]
