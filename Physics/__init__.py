@@ -10,7 +10,8 @@ from .motion_in_plane import *
 from .physics_constants import *
 from .system_of_particles import *
 from .work_power_energy import *
-
+from .thermal_properties_of_matter import *
+from .mechanical_properties_fluids import *
 __all__ = [
     # Core physics areas
     *conversion_factors.__all__,
@@ -23,4 +24,6 @@ __all__ = [
     *physics_constants.__all__,
     *system_of_particles.__all__,
     *work_power_energy.__all__,
+    *thermal_properties_of_matter.__all__,
+    *mechanical_properties_fluids.__all__,
 ]

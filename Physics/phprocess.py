@@ -329,4 +329,329 @@ def proc_gravitational_pe():
     r = float(input("Enter distance between centers (L): "))
     print("Gravitational Potential Energy (ML^2T^-2):", gravitational_potential_energy(m1, m2, r))
 
+# ==========================================================
+#  MECHANICAL PROPERTIES OF SOLIDS
+# ==========================================================
+
+def proc_shearing_stress():
+    from Physics.mechanical_properties_solids import shearing_stress1
+    F = float(input("Enter the Force (N): "))
+    A = float(input("Enter the Area (m²): "))
+    result = shearing_stress1(F, A)
+    print(f"Shearing Stress = {result:.5g} N/m²")
+
+def proc_strain_longitudinal():
+    from Physics.mechanical_properties_solids import longitudinal_strain
+    dL = float(input("Enter change in length (m): "))
+    L = float(input("Enter original length (m): "))
+    result = longitudinal_strain(dL, L)
+    print(f"Longitudinal Strain = {result:.5g}")
+
+def proc_shear_modulus():
+    from Physics.mechanical_properties_solids import shear_modulus
+    f = float(input("Enter Force (N): "))
+    a = float(input("Enter Area (m²): "))
+    dx = float(input("Enter displacement (m): "))
+    l = float(input("Enter original length (m): "))
+    result = shear_modulus(f, a, dx, l)
+    print(f"Shear Modulus = {result:.5g} N/m²")
+
+def proc_bulk_modulus():
+    from Physics.mechanical_properties_solids import bulk_modulus_elasticity2
+    P = float(input("Enter Pressure (Pa): "))
+    dV = float(input("Enter change in Volume (m³): "))
+    V = float(input("Enter original Volume (m³): "))
+    result = bulk_modulus_elasticity2(P, dV, V)
+    print(f"Bulk Modulus = {result:.5g} N/m²")
+
+def proc_poisson_ratio():
+    from Physics.mechanical_properties_solids import poisson_ratio
+    lateral_strain = float(input("Enter lateral strain: "))
+    longitudinal_strain = float(input("Enter longitudinal strain: "))
+    result = poisson_ratio(lateral_strain, longitudinal_strain)
+    print(f"Poisson's Ratio = {result:.5g}")
+
+def proc_elastic_potential_energy():
+    from Physics.mechanical_properties_solids import elastic_potential_energy2
+    F = float(input("Enter Force (N): "))
+    A = float(input("Enter Area (m²): "))
+    dL = float(input("Enter change in length (m): "))
+    L = float(input("Enter original length (m): "))
+    result = elastic_potential_energy2(F, A, dL, L)
+    print(f"Elastic Potential Energy = {result:.5g} J")
+
+
+# ==========================================================
+#  MECHANICAL PROPERTIES OF FLUIDS
+# ==========================================================
+
+def proc_viscosity():
+    from Physics.mechanical_properties_fluids import viscosity
+    F = float(input("Enter Force (N): "))
+    A = float(input("Enter Area (m²): "))
+    dv_dy = float(input("Enter velocity gradient (s⁻¹): "))
+    result = viscosity(F, A, dv_dy)
+    print(f"Viscosity = {result:.5g} Pa·s")
+
+def proc_bernoulli():
+    from Physics.mechanical_properties_fluids import bernoulli_theorem
+    P = float(input("Enter Pressure (Pa): "))
+    rho = float(input("Enter Density (kg/m³): "))
+    g = float(input("Enter g (m/s²): "))
+    h = float(input("Enter height (m): "))
+    v = float(input("Enter velocity (m/s): "))
+    result = bernoulli_theorem(P, rho, g, h, v)
+    print(f"Total Bernoulli Constant = {result:.5g} J/m³")
+
+def proc_torricelli():
+    from Physics.mechanical_properties_fluids import torricelli_law
+    g = float(input("Enter g (m/s²): "))
+    h = float(input("Enter height (m): "))
+    p = float(input("Enter pressure p (Pa): "))
+    p0 = float(input("Enter reference pressure p₀ (Pa): "))
+    rho = float(input("Enter density (kg/m³): "))
+    result = torricelli_law(g, h, p, p0, rho)
+    print(f"Velocity (Torricelli's Law) = {result:.5g} m/s")
+
+def proc_excess_pressure():
+    from Physics.mechanical_properties_fluids import excess_pressure1
+    S = float(input("Enter Surface Tension (N/m): "))
+    R = float(input("Enter Radius (m): "))
+    result = excess_pressure1(S, R)
+    print(f"Excess Pressure = {result:.5g} Pa")
+
+def proc_capillary_rise():
+    from Physics.mechanical_properties_fluids import capillary_rise
+    S = float(input("Enter Surface Tension (N/m): "))
+    rho = float(input("Enter Density (kg/m³): "))
+    g = float(input("Enter g (m/s²): "))
+    r = float(input("Enter Radius of tube (m): "))
+    theta = float(input("Enter contact angle θ (radians): "))
+    result = capillary_rise(S, rho, g, r, theta)
+    print(f"Capillary Rise = {result:.5g} m")
+
+def proc_terminal_velocity():
+    from Physics.mechanical_properties_fluids import terminal_velocity
+    r = float(input("Enter Radius of sphere (m): "))
+    rho = float(input("Enter density of fluid (kg/m³): "))
+    rho0 = float(input("Enter density of body (kg/m³): "))
+    g = float(input("Enter g (m/s²): "))
+    eta = float(input("Enter Viscosity (Pa·s): "))
+    result = terminal_velocity(r, rho, rho0, g, eta)
+    print(f"Terminal Velocity = {result:.5g} m/s")
+
+def proc_hydraulic_lift():
+    from Physics.mechanical_properties_fluids import hydraulic_lift
+    a2 = float(input("Enter Area₂ (m²): "))
+    a1 = float(input("Enter Area₁ (m²): "))
+    f1 = float(input("Enter Force₁ (N): "))
+    result = hydraulic_lift(a2, a1, f1)
+    print(f"Force on larger piston = {result:.5g} N")
+
+def proc_absolute_pressure():
+    from Physics.mechanical_properties_fluids import absolute_pressure
+    P0 = float(input("Enter Atmospheric Pressure (Pa): "))
+    h = float(input("Enter height (m): "))
+    rho = float(input("Enter Density (kg/m³): "))
+    g = float(input("Enter g (m/s²): "))
+    result = absolute_pressure(P0, h, rho, g)
+    print(f"Absolute Pressure = {result:.5g} Pa")
+
+
+# ==========================================================
+# THERMAL PROPERTIES OF MATTER
+# ==========================================================
+
+def proc_temperature_conversion():
+    from Physics.thermal_properties_of_matter import temperature_conversion1
+    f = float(input("Enter temperature in Fahrenheit (°F): "))
+    result = temperature_conversion1(f)
+    print(f"Temperature in Celsius = {result:.5g} °C")
+
+def proc_thermal_linear_expansion():
+    from Physics.thermal_properties_of_matter import thermal_linear_expansion1
+    l0 = float(input("Enter original length (m): "))
+    beta = float(input("Enter coefficient of linear expansion (1/°C): "))
+    delta_T = float(input("Enter change in temperature (°C): "))
+    result = thermal_linear_expansion1(l0, beta, delta_T)
+    print(f"Final length = {result:.5g} m")
+
+def proc_thermal_volume_expansion():
+    from Physics.thermal_properties_of_matter import thermal_volume_expansion
+    V0 = float(input("Enter original volume (m³): "))
+    gamma = float(input("Enter coefficient of volume expansion (1/°C): "))
+    delta_T = float(input("Enter temperature change (°C): "))
+    result = thermal_volume_expansion(V0, gamma, delta_T)
+    print(f"Final volume = {result:.5g} m³")
+
+def proc_latent_heat_fusion():
+    from Physics.thermal_properties_of_matter import latent_heat_fusion
+    m = float(input("Enter mass (kg): "))
+    lf = float(input("Enter latent heat of fusion (J/kg): "))
+    result = latent_heat_fusion(m, lf)
+    print(f"Heat absorbed/released = {result:.5g} J")
+
+def proc_specific_heat_capacity():
+    from Physics.thermal_properties_of_matter import specific_heat_capacity
+    Q = float(input("Enter heat absorbed (J): "))
+    m = float(input("Enter mass (kg): "))
+    delta_T = float(input("Enter temperature change (°C): "))
+    result = specific_heat_capacity(Q, m, delta_T)
+    print(f"Specific Heat Capacity = {result:.5g} J/kg·°C")
+
+def proc_rate_of_heat_flow():
+    from Physics.thermal_properties_of_matter import rate_of_heat_flow1
+    k = float(input("Enter thermal conductivity (W/m·K): "))
+    A = float(input("Enter Area (m²): "))
+    delta_T = float(input("Enter temperature difference (°C): "))
+    d = float(input("Enter thickness (m): "))
+    result = rate_of_heat_flow1(k, A, delta_T, d)
+    print(f"Rate of Heat Flow = {result:.5g} W")
+
+def proc_newton_law_cooling():
+    from Physics.thermal_properties_of_matter import newton_law_cooling
+    k = float(input("Enter cooling constant: "))
+    m = float(input("Enter mass (kg): "))
+    s = float(input("Enter specific heat capacity (J/kg·°C): "))
+    t2 = float(input("Enter initial temperature (°C): "))
+    t1 = float(input("Enter final temperature (°C): "))
+    result = newton_law_cooling(k, m, s, t2, t1)
+    print(f"Rate of Cooling = {result:.5g} J/s")
+
+# ==========================================================
+# ELECTRICITY
+# ==========================================================
+
+def proc_charge():
+    from Physics.dimensional_formulas import charge
+    current = float(input("Enter current (A): "))
+    time = float(input("Enter time (s): "))
+    result = charge(current, time)
+    print(f"Charge = {result:.5g} C")
+
+def proc_current_density():
+    from Physics.dimensional_formulas import current_density
+    current = float(input("Enter current (A): "))
+    area = float(input("Enter area (m²): "))
+    result = current_density(current, area)
+    print(f"Current Density = {result:.5g} A/m²")
+
+def proc_voltage():
+    from Physics.dimensional_formulas import voltage
+    work = float(input("Enter work done (J): "))
+    q = float(input("Enter charge (C): "))
+    result = voltage(work, q)
+    print(f"Voltage = {result:.5g} V")
+
+def proc_resistance():
+    from Physics.dimensional_formulas import resistance
+    voltage = float(input("Enter voltage (V): "))
+    current = float(input("Enter current (A): "))
+    result = resistance(voltage, current)
+    print(f"Resistance = {result:.5g} Ω")
+
+def proc_capacitance():
+    from Physics.dimensional_formulas import capacitance
+    q = float(input("Enter charge (C): "))
+    voltage = float(input("Enter voltage (V): "))
+    result = capacitance(q, voltage)
+    print(f"Capacitance = {result:.5g} F")
+
+def proc_conductance():
+    from Physics.dimensional_formulas import conductance
+    r = float(input("Enter resistance (Ω): "))
+    result = conductance(r)
+    print(f"Conductance = {result:.5g} S")
+
+def proc_electric_field():
+    from Physics.dimensional_formulas import electric_field
+    F = float(input("Enter electric force (N): "))
+    q = float(input("Enter charge (C): "))
+    result = electric_field(F, q)
+    print(f"Electric Field = {result:.5g} N/C")
+
+def proc_dielectric_constant():
+    from Physics.dimensional_formulas import dielectric_constant
+    eps_mat = float(input("Enter permittivity of material (F/m): "))
+    eps0 = float(input("Enter permittivity of free space (F/m): "))
+    result = dielectric_constant(eps_mat, eps0)
+    print(f"Dielectric Constant = {result:.5g}")
+
+def proc_specific_charge():
+    from Physics.dimensional_formulas import specific_charge
+    q = float(input("Enter charge (C): "))
+    m = float(input("Enter mass (kg): "))
+    result = specific_charge(q, m)
+    print(f"Specific Charge = {result:.5g} C/kg")
+
+
+# ==========================================================
+# MAGNETISM
+# ==========================================================
+
+def proc_magnetic_flux():
+    from Physics.dimensional_formulas import magnetic_flux
+    B = float(input("Enter magnetic field (T): "))
+    A = float(input("Enter area (m²): "))
+    result = magnetic_flux(B, A)
+    print(f"Magnetic Flux = {result:.5g} Wb")
+
+def proc_inductance():
+    from Physics.dimensional_formulas import inductance
+    phi = float(input("Enter magnetic flux (Wb): "))
+    I = float(input("Enter current (A): "))
+    result = inductance(phi, I)
+    print(f"Inductance = {result:.5g} H")
+
+def proc_magnetic_dipole_moment():
+    from Physics.dimensional_formulas import magnetic_dipole_moment
+    tau = float(input("Enter torque (N·m): "))
+    B = float(input("Enter magnetic field (T): "))
+    result = magnetic_dipole_moment(tau, B)
+    print(f"Magnetic Dipole Moment = {result:.5g} A·m²")
+
+def proc_magnetic_field_strength():
+    from Physics.dimensional_formulas import magnetic_field_strength
+    mu = float(input("Enter magnetic moment (A·m²): "))
+    V = float(input("Enter volume (m³): "))
+    result = magnetic_field_strength(mu, V)
+    print(f"Magnetic Field Strength = {result:.5g} A/m")
+
+def proc_magnetic_moment():
+    from Physics.dimensional_formulas import magnetic_moment
+    I = float(input("Enter current (A): "))
+    A = float(input("Enter area (m²): "))
+    result = magnetic_moment(I, A)
+    print(f"Magnetic Moment = {result:.5g} A·m²")
+
+def proc_self_inductance_coefficient():
+    from Physics.dimensional_formulas import coefficient_self_induction
+    emf = float(input("Enter induced emf (V): "))
+    di_dt = float(input("Enter rate of change of current (A/s): "))
+    result = coefficient_self_induction(emf, di_dt)
+    print(f"Self-Induction Coefficient = {result:.5g} H")
+
+def proc_mutual_inductance_coefficient():
+    from Physics.dimensional_formulas import coefficient_mutual_induction
+    emf = float(input("Enter mutual emf (V): "))
+    di_dt = float(input("Enter rate of change of current (A/s): "))
+    result = coefficient_mutual_induction(emf, di_dt)
+    print(f"Mutual Inductance Coefficient = {result:.5g} H")
+
+def proc_relative_permeability():
+    from Physics.dimensional_formulas import relative_permeability
+    mu_r = float(input("Enter permeability of material (H/m): "))
+    mu0 = float(input("Enter permeability of free space (H/m): "))
+    result = relative_permeability(mu_r, mu0)
+    print(f"Relative Permeability = {result:.5g}")
+
+def proc_magnetic_flux_density():
+    from Physics.dimensional_formulas import magnetic_flux_density
+    I = float(input("Enter current (A): "))
+    dl = float(input("Enter length element (m): "))
+    r = float(input("Enter distance (m): "))
+    result = magnetic_flux_density(I, dl, r)
+    print(f"Magnetic Flux Density = {result:.5g} T")
+
+
 __all__ = [name for name in globals() if not name.startswith("_")]

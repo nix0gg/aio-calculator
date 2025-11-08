@@ -123,7 +123,18 @@ def angular_impulse(torque, time):
 def gravitational_constant(force, mass1, mass2, distance):
     return (force * distance ** 2) / (mass1 * mass2)
 
+def gc2(f,r,m):
+    return (f*r**2)/(m**2)
 
+def poisson_ratio(lateral_strain, longitudinal_strain):
+    return lateral_strain / longitudinal_strain
+
+def couple(force,distance):
+    return force * distance
+
+def spring_constant(force, length):
+    return force / length
+                    
 # ---------------------------- Heat and Thermodynamics ----------------------------
 
 def plancks_constant(energy, frequency):
@@ -159,7 +170,50 @@ def boltzmann_constant(energy, temperature):
 def universal_gas_constant(pressure, volume, temperature, moles):
     return (pressure * volume) / (temperature * moles)
 
+def mechanical_equivalence(w, h):
+    return w / h
 
+def specific_heat(heat_energy, mass, temperature_change):
+    return heat_energy / (mass * temperature_change)
+
+def thermal_capacity(m, specific_heat):
+    return m * specific_heat
+
+def molar_specific_heat(specific_heat, molar_mass):
+    return specific_heat * molar_mass
+
+def solar_constant(energy,time,area):
+    return energy / (time * area)
+
+def latent_heat(heat_energy, mass):
+    return heat_energy / mass
+
+def entropy(heat,temperature):
+    return heat / temperature
+
+def vanderwaals_constant_a(pressure, volume):
+    return pressure * (volume ** 2)
+def vanderwaals_constant_b(volume, b):
+    b = volume
+    return b
+
+def thermal_conductivity(heat_energy, area, d0, dx, time):
+    return heat_energy * (area * (d0 / dx) * time)
+
+def temperature_gradient(d0, dx):
+    return d0 / dx
+
+def thermal_resistance(plane_thickness, thermal_cond, area):
+    return plane_thickness / (thermal_cond * area)
+
+def emissive_power(heat, area, time):
+    return heat / (area * time)
+
+def rate_of_cooling(lost_heat, time):
+    return lost_heat / time
+
+def molar_volume(volume, moles):
+    return volume / moles
 # ---------------------------- Electricity ----------------------------
 
 def charge(current, time):
@@ -191,8 +245,24 @@ def electric_dipole_moment(torque, electric_field):
 
 def electric_intensity(potential_difference, distance):
     return potential_difference / distance
+ 
+def electrical_permittivity(charge1, charge2, electric_force, distance):
+    return (charge1 * charge2) / (4 * math.pi * electric_force * distance ** 2) #electrical permittivity = e0
 
+def dielectric_constant(electrical_permittivity_material, electrical_permittivity_free_space):
+    return electrical_permittivity_material / electrical_permittivity_free_space
 
+def conductance(resistance):
+    return 1 / resistance
+
+def conductivity(resistivity):
+    return 1 / resistivity
+
+def electric_flux(electric_intensity, area):
+    return electric_intensity * area
+
+def specific_charge(charge, mass):
+    return charge / mass
 # ---------------------------- Magnetism ----------------------------
 
 def magnetic_flux(magnetic_field, area):
@@ -212,6 +282,28 @@ def permittivity_constant(charge1, charge2, electric_force, distance):
 
 def permeability_constant(force, distance, current1, current2, length):
     return (2 * math.pi * force * distance) / (current1 * current2 * length)
+
+def magnetic_moment(current, area):
+    return current * area
+
+def pole_strength(magnetic_force, magnetic_field):
+    return magnetic_force / magnetic_field
+
+def coefficient_self_induction(induced_emf, rate_of_change_current):
+    return induced_emf / rate_of_change_current
+
+def coefficient_mutual_induction(mutual_emf, rate_of_change_current):
+    return mutual_emf / rate_of_change_current
+
+def magnetic_flux_density(I, dl, r):
+    return (I*dl)/(4*math.pi*r**2)
+
+def relative_permeability(permeability_material, permeability_free_space):
+    return permeability_material / permeability_free_space
+
+def magnetic_suspension_force(magnetic_field, pole_strength):
+    return magnetic_field * pole_strength
+
 
 
 # ---------------------------- Optics and Radiation ----------------------------
@@ -245,6 +337,9 @@ def luminous_efficiency(total_luminous_flux, total_radiant_flux):
 
 def illumination(luminous_flux_incident, area):
     return luminous_flux_incident / area
+
+def luminous_flux(light_energy, seconds):
+    return light_energy / seconds
 
 
 # ---------------------------- Modern Physics ----------------------------
@@ -280,3 +375,5 @@ def inductive_reactance(angular_freq, inductance):
     return angular_freq * inductance
 
 __all__ = [name for name in globals() if not name.startswith("_")]
+
+
